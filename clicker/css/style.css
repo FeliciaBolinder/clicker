@@ -1,0 +1,190 @@
+/* colors: 
+Grå/lila: #b8b8d1
+Lila: #5b5f97
+Orange: #ffc145
+Vit: #fffffb
+Rosa: #ff6b6c
+#
+
+*/
+
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+
+	font-size: 62.5%;
+	background-color:#fffffb;
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 10%;
+	align-content: center;
+}
+
+h1, h2 {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: .4rem;
+}
+
+h1 {
+	font-size: 6em;
+}
+
+h2 {
+	font-size: 4em;
+	border-bottom: 1px solid white;
+}
+
+p {
+	font-size: 2em;
+}
+nav  { 
+
+	width: 100%;
+	position: fixed;
+	background-color:#ffc145 ;
+	top: 0px;
+	padding-top: 1%;
+   
+   }
+   nav > ul > li {
+	   
+	   list-style: none;
+	   display: inline;
+	   margin-left: 2%;
+	
+    font-size: 2em;	
+	   
+	   
+   }
+   
+   li > a {
+	   
+	   
+	   font-family: 'Open Sans', sans-serif;
+	   text-decoration: none;
+	   color: #fffffb;
+   }
+   
+   li > a:hover {
+	   color: #5b5f97;
+	   text-decoration: none;
+   }
+
+article {
+	height: 100vh;
+	padding-bottom: 80px;
+}
+
+#game, #score{
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#score {
+	font-size: 2em;
+}
+
+#clickerbutton {
+	font-size: 6em;
+	width:300px;
+	height:300px;
+	border-radius: 200px;
+	background-color:#fffffb;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: .4rem;
+	color:#fffffb;
+	border:0px solid#fffffb;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#clickerbutton:active {
+	transition-property: border, background-color;
+	transition-duration: 1s;
+	background-color: #812F05;
+	border: 40px solid #7E8987;
+}
+#clickerbutton:focus {
+	outline: 0px;
+}
+
+.logo {
+	font-size: 6em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(51,51,51,0.8);
+}
+
+#frostingSuper {
+	display: none;
+}
+
+#powerUps {
+	text-align: center;
+}
+
+.powerUpButton {
+	color: white;
+	font-size: 2em;
+	width:110px;
+	height:110px;
+	border-radius: 100px;
+	background-color: #5b5f97;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: .4rem;
+	border:0px solid #7E8987;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.powerUpButton:active {
+	transition-property: border, background-color;
+	transition-duration: 1s;
+	background-color:#5b5f97;
+	border: 4px solid #7E8987;
+}
+.powerUpButton:focus {
+	outline: 0px;
+}
+
+#powerText {
+	white-space: pre;
+}
+
+.row {
+
+margin-top: 5%;
+}
+
+
+* {
+	box-sizing: border-box;
+  }
+  
+  .zoom {
+	padding: 50px;
+	transition: transform .2s;
+	margin: 0 auto;
+  }
+  
+  .zoom:hover {
+	-ms-transform: scale(1.2); /* IE 9 */
+	-webkit-transform: scale(1.52); /* Safari 3-8 */
+	transform: scale(1.2); 
+  }

@@ -4,30 +4,45 @@ let button = document.getElementById("clickerbutton");
 let frostingButton = document.getElementById("frosting");
 let scoreDiv = document.getElementById("score");
 let powerText = document.getElementById("powerText");
-let sprinklesButton = document.getElementById("sprinkles");
+let cherryButton = document.getElementById("cherry");
 let frostingSuper = document.getElementById("frostingSuper");
 let soundButton =document.getElementById("Sound");
+var audio = new Audio('music.mp3');
+
 
 
 /* Skapa ett nytt element för poängen */
 let scoreText = document.createElement("p");
 
-/* spelvariabler, sprinklesfrosting, sprinkles är powerups*/
+/* spelvariabler, cherryfrosting, cherry är powerups*/
 let clickValue = 1; // vad är varje click värt
 let bank = 0; // hur mycket valuta spelaren har
 let frostingCost = 15;
 let frostingClicks = 0;
-let sprinklesCost = 30;
-let sprinkles = null;
-let sprinklesTimer = 0;
+let cherryCost = 30;
+let cherry = null;
+let cherryTimer = 0;
 let frostingPurchased = 0;
 let superFrostingPurchased = 0;
 
 
+function changeImage() {
+	var image = document.getElementById('sound');
+	if (image.src.match("bild")) {
+	  image.src = "bild/soundOn.png";
+	  audio.play();
+	  
+	} else {
+	  image.src = "bild/soundOff.png";
+	  audio.pause();
+	}
+  }
+ 
+
 /* Startvärden för eleement, text */
 scoreText.textContent = "Points: 0";
 frostingButton.textContent = "Frosting " + frostingCost;
-sprinklesButton.textContent = "sprinkles " + sprinklesCost;
+cherryButton.textContent = "cherry " + cherryCost;
 
 /* click event + logic */
 button.addEventListener("click", function() {
@@ -42,29 +57,29 @@ button.addEventListener("click", function() {
 	scoreText.textContent = "Points: " + Math.floor(bank); // sätt textvärdet i p elementet till bank.
 }, true);
 
-/* kod för sprinklespowerup med räknare */
-sprinklesButton.addEventListener("click", function() {
-	if (bank >= sprinklesCost && sprinklesTimer == 0) {
-		bank -= sprinklesCost;
-		sprinklesTimer += 10;
-		powerText.textContent += "Köpte sprinkles\n";
+/* kod för cherrypowerup med räknare */
+cherryButton.addEventListener("click", function() {
+	if (bank >= cherryCost && cherryTimer == 0) {
+		bank -= cherryCost;
+		cherryTimer += 10;
+		powerText.textContent += "Köpte cherry\n";
 
 		// Lägg till setInterval med en funktion som laddas varje sekund
-		// sprinklesn använder en timer och fungerar under en period
-		sprinkles = setInterval(function() {
+		// cherryn använder en timer och fungerar under en period
+		cherry = setInterval(function() {
 			bank += 10;
 			scoreText.textContent = "Points: " + Math.floor(bank);
-			sprinklesTimer--;
+			cherryTimer--;
 
-			if (sprinklesTimer == 0) {
-				powerText.textContent += "Slut på sprinkles\n";
-				clearInterval(sprinkles);  // kalla på clearInterval för att rensa setInterval
+			if (cherryTimer == 0) {
+				powerText.textContent += "Slut på cherry\n";
+				clearInterval(cherry);  // kalla på clearInterval för att rensa setInterval
 			}
 		}, 1000);
-	} else if (sprinklesTimer > 0) {
-		powerText.textContent += "Du har redan sprinkles\n";
+	} else if (cherryTimer > 0) {
+		powerText.textContent += "Du har redan cherry\n";
 	} else {
-		powerText.textContent += "Du har inte råd med sprinkles\n";
+		powerText.textContent += "Du har inte råd med cherry\n";
 	}
 }, true);
 
@@ -101,3 +116,6 @@ frostingSuper.addEventListener("click", function() {
 }, true);
 
 scoreDiv.appendChild(scoreText); // fäst p elementet i score diven.
+
+
+  

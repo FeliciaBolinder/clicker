@@ -144,7 +144,7 @@ footer {
 	width:110px;
 	height:110px;
 	border-radius: 100px;
-	background-color: #5b5f97;
+	background-color:;
 	font-family: 'Open Sans', sans-serif;
 	letter-spacing: .4rem;
 	border:0px solid #7E8987;
@@ -170,6 +170,10 @@ footer {
 .row {
 
 margin-top: 5%;
+}
+
+.sound {
+	
 }
 
 

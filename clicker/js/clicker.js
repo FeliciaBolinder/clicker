@@ -11,8 +11,10 @@ var audio = new Audio('music.mp3');
 
 
 
+
 /* Skapa ett nytt element för poängen */
 let scoreText = document.createElement("p");
+let textDiv = document.createElement("t"); 
 
 /* spelvariabler, cherryfrosting, cherry är powerups*/
 let clickValue = 1; // vad är varje click värt
@@ -25,6 +27,14 @@ let cherryTimer = 0;
 let frostingPurchased = 0;
 let superFrostingPurchased = 0;
 
+function swapImage(id,primary,secondary) {
+	src=document.getElementById(id).src;
+	if (src.match(primary)) {
+	  document.getElementById(id).src=secondary;
+	} else {
+	  document.getElementById(id).src=primary;
+	}
+  }
 
 function changeImage() {
 	var image = document.getElementById('sound');
@@ -38,11 +48,12 @@ function changeImage() {
 	}
   }
  
-
 /* Startvärden för eleement, text */
-scoreText.textContent = "Points: 0";
-frostingButton.textContent = "Frosting " + frostingCost;
-cherryButton.textContent = "cherry " + cherryCost;
+scoreText.textContent = "Points: 0 ";
+
+
+
+
 
 /* click event + logic */
 button.addEventListener("click", function() {
@@ -62,7 +73,7 @@ cherryButton.addEventListener("click", function() {
 	if (bank >= cherryCost && cherryTimer == 0) {
 		bank -= cherryCost;
 		cherryTimer += 10;
-		powerText.textContent += "Köpte cherry\n";
+		powerText.textContent += "Bought cherry\n";
 
 		// Lägg till setInterval med en funktion som laddas varje sekund
 		// cherryn använder en timer och fungerar under en period
@@ -72,14 +83,14 @@ cherryButton.addEventListener("click", function() {
 			cherryTimer--;
 
 			if (cherryTimer == 0) {
-				powerText.textContent += "Slut på cherry\n";
+				powerText.textContent += "No more cherries...\n";
 				clearInterval(cherry);  // kalla på clearInterval för att rensa setInterval
 			}
 		}, 1000);
 	} else if (cherryTimer > 0) {
-		powerText.textContent += "Du har redan cherry\n";
+		powerText.textContent += "You already have cherry\n";
 	} else {
-		powerText.textContent += "Du har inte råd med cherry\n";
+		powerText.textContent += "You can't afford cherry\n";
 	}
 }, true);
 
@@ -99,10 +110,12 @@ frostingButton.addEventListener("click", function() {
 		}
 
 		frostingButton.textContent = "Frosting " + Math.floor(frostingCost);
-		powerText.textContent += "Köpte frosting\n";
+		powerText.textContent += "Bought frosting\n";
+		
+
 		scoreText.textContent = "Points: " + Math.floor(bank); // sätt textvärdet i p elementet till bank.
 	} else {
-		powerText.textContent += "Du har inte råd med frosting\n";
+		powerText.textContent += "You can't afford frosting\n";
 	}
 }, true);
 
@@ -111,11 +124,11 @@ frostingSuper.addEventListener("click", function() {
 	frostingSuper.style.display = "none";	// göm knappen
 	bank = bank * 10;
 	superFrostingPurchased = 1;
-	powerText.textContent += "DU KÖPTE SUPERFROSTING!\n";
+	powerText.textContent += "YOU BOUGHT SUPER FROSTING!\n";
 	scoreText.textContent = "Points: " + Math.floor(bank);
 }, true);
 
 scoreDiv.appendChild(scoreText); // fäst p elementet i score diven.
 
 
-  
+ 

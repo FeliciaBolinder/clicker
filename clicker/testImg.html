@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+	<title>Clicker</title> 
+
+    </head>
+<main>
+
+    <script type="text/javascript">
+        function swapImage(id,primary,secondary) {
+          src=document.getElementById(id).src;
+          if (src.match(primary)) {
+            document.getElementById(id).src=secondary;
+          } else {
+            document.getElementById(id).src=primary;
+          }
+        }
+      </script>
+
+<img
+id="muffin"
+onclick="swapImage(
+  'muffin',
+  'bild/muffinOrg.png',
+  'bild/muffinFrost.png'
+)"
+src="bild/muffinOrg.png"
+title=""
+alt="Hej"
+/>
+<span style="font-size:0.6em">
+Click image to toggle colour.
+(Alternatively, view desaturated image
+<a href="bild/muffinOrg.png">here</a>.)
+</span>
+
+</main>
+    </html>
+
+    

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">  
@@ -10,20 +10,19 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	><nav>
+	<nav>
 			
 				<ul>
 	   
-					<img src="bild/nti.png" width="40" height="40">
+				<li><img src="bild/nti.png" alt= "NTI-logga" width="40" height="40"> </li>
 			   <li><a href="?"> Cupcake Clicker</a></li> 
-				<li><a href="?"> Play</a></li>
+				<li><a href="#game"> Play</a></li>
 	
-				<li><a href="?"> About</a></li>
+				<li><a href="#About"> About</a></li>
 				
 	   
 				</ul>
-		 
-		</div>
+		
 	</nav>
 	<main>
 		<section class="py-0 my-0" id="welcome">
@@ -33,7 +32,7 @@
 					
 				</div>
 				<div class="row">
-					<p>How to play: Click on the muffin to earn points. The points can later be spent on upgrades.
+					<p>How to play: Click on the Cupcake to earn points. The points can later be spent on upgrades. 
 						
 					</p>
 				</div>
@@ -44,7 +43,7 @@
 				<div class="row">
 					<h2>Game music</h2>
 					<div class="sound">
-							<img id="sound" onclick="changeImage()" src="bild/soundOff.png" width="50" height="50">
+							<img id="sound" onclick="changeImage()" src="bild/soundOff.png" alt="Button to turn on sound" width="50" height="50">
 
 
 					</div>
@@ -54,7 +53,16 @@
 				</div>
 				<div class="zoom">
 					
-					<button id="clickerbutton"><img src="bild/muffinORG.png" width="90%" height="80%"></button>
+					
+					<button id="clickerbutton"><img id="cupcake"
+						onclick="swapImage(
+						  'cupcake',
+						  'bild/muffinFrost.png',
+						  'bild/muffinFrostEye.png'
+						)"
+
+						
+						src="bild/muffinFrost.png" alt="cupcake"   width="300" height="300"></button>
 					
 				</div>
 				
@@ -63,27 +71,35 @@
 					<div class="col-6" id="powerUps">
 							
 							
-						<button id="frosting" class="powerUpButton" accesskey="l"><img src="bild/frosting.png" width="80%" height="150%">></button>
+						<button id="frosting" class="powerUpButton" accesskey="l"> 
+							
+							
+							
+							
+							<img src="bild/frosting.png" alt="frosting" width="70" height="140">></button>
 						
 					
-						
-
+			
 						<button id="frostingSuper" class="powerUpButton" accesskey="f"></button>
 
 						
-						<button id="cherry" class="powerUpButton" accesskey="c"> <img src="bild/cherry.png" width="140%" height="110%"></button> 
-						<p>Frosting: 15 - Cherry:30</p>
+						<button id="cherry" class="powerUpButton" accesskey="c"> <img src="bild/cherry.png" alt="cherries" width="130" height="110"></button> 
+
+						
+						<p><br> Press one to upgrade <br>(cost increases every)</p>
 									
 						<p id="powerText"></p>
 
 					</div>
 				</div>
-			</div>
+			
 		</section>
-		<section class="py-0 my-0" id="about">
+		<section class="py-0 my-0" id="About">
 			<div class="container sec">
-				<div class="row">
+				<div class="row" >
+						
 					<h2>About</h2>
+
 					
 				</div>
 				<div class="row">			
@@ -91,9 +107,16 @@
 						tempora quas expedita nemo, doloremque, incidunt eveniet architecto molestiae voluptatibus quae quaerat hic possimus? Eius, a ab quis.
 					   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum debitis, atque fuga error, vitae hic asperiores quod cumque officia necessitatibus
 						nihil pariatur laudantium ea, quasi voluptatum? Facilis ab rerum voluptate!</p>
-						<img src="bild/muffinFrost.png" width="32%" height="32%">
-						<img src="bild/muffinSprink.png" width="32%" height="32%">
-						<img src="bild/muffinCherry.png" width="32%" height="32%">
+
+					</div>
+					<div class= "images">
+						<img src="bild/muffinCherry.png" alt="Cupcake with cherry" width="210" height="210">
+
+						<img src="bild/muffinFrost.png" alt="Cupcake" width="210" height="210">
+						<img src="bild/muffinOrg.png" alt="Muffin" width="220" height="220">
+						<img src="bild/muffinFrost.png" alt="Cupcake" width="210" height="210">
+						
+						<img src="bild/muffinCherry.png" alt="Cupcake with cherry" width="210" height="210">
 				</div>
 			</div>
 		</section>

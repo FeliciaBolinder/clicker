@@ -44,7 +44,7 @@ function changeImage() {
 	  
 	} else {
 	  image.src = "bild/soundOff.png";
-	  audio.pause();
+	  
 	}
   }
  

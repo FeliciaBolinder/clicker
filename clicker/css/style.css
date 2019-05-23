@@ -106,7 +106,7 @@ article {
 }
 
 #clickerbutton:active {
-	transition-property: border, background-color;
+	transition-property: border;
 	transition-duration: 1s;
 	background-color:#fffffb;
 	border: 40px solid #7E8987;
